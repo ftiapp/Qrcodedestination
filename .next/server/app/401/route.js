@@ -1,0 +1,64 @@
+(()=>{var a={};a.id=366,a.ids=[366],a.modules={261:a=>{"use strict";a.exports=require("next/dist/shared/lib/router/utils/app-paths")},846:a=>{"use strict";a.exports=require("next/dist/compiled/next-server/app-page.runtime.prod.js")},3033:a=>{"use strict";a.exports=require("next/dist/server/app-render/work-unit-async-storage.external.js")},3421:(a,b,c)=>{"use strict";Object.defineProperty(b,"I",{enumerable:!0,get:function(){return g}});let d=c(1237),e=c(5088),f=c(7679);async function g(a,b,c,g){if((0,d.isNodeNextResponse)(b)){var h;b.statusCode=c.status,b.statusMessage=c.statusText;let d=["set-cookie","www-authenticate","proxy-authenticate","vary"];null==(h=c.headers)||h.forEach((a,c)=>{if("x-middleware-set-cookie"!==c.toLowerCase())if("set-cookie"===c.toLowerCase())for(let d of(0,f.splitCookiesString)(a))b.appendHeader(c,d);else{let e=void 0!==b.getHeader(c);(d.includes(c.toLowerCase())||!e)&&b.appendHeader(c,a)}});let{originalResponse:i}=b;c.body&&"HEAD"!==a.method?await (0,e.pipeToNodeResponse)(c.body,i,g):i.end()}}},4870:a=>{"use strict";a.exports=require("next/dist/compiled/next-server/app-route.runtime.prod.js")},5736:(a,b,c)=>{"use strict";a.exports=c(4870)},6144:(a,b,c)=>{"use strict";c.r(b),c.d(b,{handler:()=>A,patchFetch:()=>z,routeModule:()=>v,serverHooks:()=>y,workAsyncStorage:()=>w,workUnitAsyncStorage:()=>x});var d={};c.r(d),c.d(d,{GET:()=>u});var e=c(5736),f=c(9117),g=c(4044),h=c(9326),i=c(2324),j=c(261),k=c(4290),l=c(5328),m=c(8928),n=c(6595),o=c(3421),p=c(7679),q=c(1681),r=c(3446),s=c(6439),t=c(1356);function u(){let a="https://employee-management-9yicp.kinsta.app/login";return new Response(`<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>401 Unauthorized</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+      :root { color-scheme: light; }
+      body {
+        margin: 0;
+        font-family: "Noto Sans Thai", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+        background: radial-gradient(1200px 600px at 18% 10%, rgba(79, 70, 229, 0.22), rgba(79, 70, 229, 0) 60%),
+          radial-gradient(900px 520px at 70% 20%, rgba(16, 185, 129, 0.18), rgba(16, 185, 129, 0) 55%),
+          linear-gradient(180deg, #0b1220, #0a0f1a);
+        color: rgba(255, 255, 255, 0.92);
+      }
+      .wrap { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+      .panel { width: 100%; max-width: 980px; border-radius: 28px; overflow: hidden; box-shadow: 0 24px 70px rgba(0,0,0,0.55); background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.09); }
+      .headline { display: grid; grid-template-columns: 1fr; gap: 16px; align-items: center; text-align: left; }
+      .left { text-align: left; padding: 34px 34px 32px; }
+      .kicker { margin: 0 0 10px; font-size: 16px; font-weight: 700; letter-spacing: 0.01em; color: rgba(255, 255, 255, 0.72); }
+      .right { display: grid; place-items: center; background: #ffffff; padding: 34px; position: relative; }
+      .right::before { content: ""; position: absolute; top: 0; bottom: 0; left: -90px; width: 200px; background: linear-gradient(135deg, rgba(255,255,255,0) 45%, rgba(255,255,255,1) 46%); pointer-events: none; }
+      .big { position: relative; display: inline-block; font-weight: 900; letter-spacing: -0.02em; font-size: clamp(80px, 16vw, 170px); line-height: 0.92; margin: 0 0 14px; color: rgba(255, 255, 255, 0.96); text-shadow: 0 14px 40px rgba(0,0,0,0.45); }
+      .big::after { content: attr(data-text); position: absolute; inset: 0; transform: translate(0.06em, 0.06em); color: rgba(79, 70, 229, 0.7); z-index: -1; text-shadow: none; }
+      .sub { margin-top: 0; font-size: 22px; font-weight: 800; letter-spacing: 0.01em; color: rgba(255, 255, 255, 0.9); }
+      .fineprint { margin-top: 12px; font-size: 13px; line-height: 1.5; color: rgba(255, 255, 255, 0.62); }
+      .urlpill { display: inline-flex; align-items: center; justify-content: center; gap: 10px; margin: 6px 0 6px; padding: 0; border-radius: 0; background: transparent; border: 0; color: #a5b4fc; font-weight: 900; letter-spacing: 0.01em; text-decoration: none; box-shadow: none; word-break: break-word; }
+      .urlpill:hover { color: #c7d2fe; }
+      .actions { display:flex; flex-wrap:wrap; gap:.75rem; justify-content:flex-start; margin-top: 18px; }
+      a.btn { display:inline-flex; align-items:center; justify-content:center; padding:.75rem 1rem; border-radius:14px; border:1px solid transparent; text-decoration:none; font-weight:700; }
+      a.primary { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 55%, #1d4ed8 100%); color:#fff; }
+      a.secondary { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.9); border-color: rgba(255,255,255,0.14); }
+      .logo { display:block; margin:0; width: min(220px, 44vw); height:auto; filter: drop-shadow(0 10px 18px rgba(0,0,0,0.45)); opacity: 0.96; }
+      @media (min-width: 760px) { .headline { grid-template-columns: 1fr auto; gap: 26px; } .right { justify-self: end; } }
+      @media (max-width: 759px) { .panel { border-radius: 22px; } .headline { text-align: center; } .left { text-align: center; padding: 26px 22px 18px; } .logo { margin: 0 auto; } .right { padding: 18px 22px 26px; } .right::before { display: none; } .actions { justify-content: center; } }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="panel">
+        <div class="headline">
+          <div class="left">
+            <div class="kicker">we have a problem.</div>
+            <div class="big" data-text="401!">401!</div>
+            <div class="sub">Unauthorized</div>
+            <div class="fineprint">
+              <div>กรุณาเข้าสู่ระบบผ่านลิงก์นี้</div>
+              <a class="urlpill" href="${a}">${a}</a>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="${a}">ไปหน้าเข้าสู่ระบบ</a>
+              <a class="btn secondary" href="/">กลับหน้าแรก</a>
+            </div>
+          </div>
+          <div class="right"><img class="logo" src="/fti.png" alt="FTI" /></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>`,{status:401,headers:{"content-type":"text/html; charset=utf-8"}})}let v=new e.AppRouteRouteModule({definition:{kind:f.RouteKind.APP_ROUTE,page:"/401/route",pathname:"/401",filename:"route",bundlePath:"app/401/route"},distDir:".next",relativeProjectDir:"",resolvedPagePath:"C:\\Users\\polawats\\destination\\app\\401\\route.ts",nextConfigOutput:"",userland:d}),{workAsyncStorage:w,workUnitAsyncStorage:x,serverHooks:y}=v;function z(){return(0,g.patchFetch)({workAsyncStorage:w,workUnitAsyncStorage:x})}async function A(a,b,c){var d;let e="/401/route";"/index"===e&&(e="/");let g=await v.prepare(a,b,{srcPage:e,multiZoneDraftMode:!1});if(!g)return b.statusCode=400,b.end("Bad Request"),null==c.waitUntil||c.waitUntil.call(c,Promise.resolve()),null;let{buildId:u,params:w,nextConfig:x,isDraftMode:y,prerenderManifest:z,routerServerContext:A,isOnDemandRevalidate:B,revalidateOnlyGenerated:C,resolvedPathname:D}=g,E=(0,j.normalizeAppPath)(e),F=!!(z.dynamicRoutes[E]||z.routes[D]);if(F&&!y){let a=!!z.routes[D],b=z.dynamicRoutes[E];if(b&&!1===b.fallback&&!a)throw new s.NoFallbackError}let G=null;!F||v.isDev||y||(G="/index"===(G=D)?"/":G);let H=!0===v.isDev||!F,I=F&&!H,J=a.method||"GET",K=(0,i.getTracer)(),L=K.getActiveScopeSpan(),M={params:w,prerenderManifest:z,renderOpts:{experimental:{cacheComponents:!!x.experimental.cacheComponents,authInterrupts:!!x.experimental.authInterrupts},supportsDynamicResponse:H,incrementalCache:(0,h.getRequestMeta)(a,"incrementalCache"),cacheLifeProfiles:null==(d=x.experimental)?void 0:d.cacheLife,isRevalidate:I,waitUntil:c.waitUntil,onClose:a=>{b.on("close",a)},onAfterTaskError:void 0,onInstrumentationRequestError:(b,c,d)=>v.onRequestError(a,b,d,A)},sharedContext:{buildId:u}},N=new k.NodeNextRequest(a),O=new k.NodeNextResponse(b),P=l.NextRequestAdapter.fromNodeNextRequest(N,(0,l.signalFromNodeResponse)(b));try{let d=async c=>v.handle(P,M).finally(()=>{if(!c)return;c.setAttributes({"http.status_code":b.statusCode,"next.rsc":!1});let d=K.getRootSpanAttributes();if(!d)return;if(d.get("next.span_type")!==m.BaseServerSpan.handleRequest)return void console.warn(`Unexpected root span type '${d.get("next.span_type")}'. Please report this Next.js issue https://github.com/vercel/next.js`);let e=d.get("next.route");if(e){let a=`${J} ${e}`;c.setAttributes({"next.route":e,"http.route":e,"next.span_name":a}),c.updateName(a)}else c.updateName(`${J} ${a.url}`)}),g=async g=>{var i,j;let k=async({previousCacheEntry:f})=>{try{if(!(0,h.getRequestMeta)(a,"minimalMode")&&B&&C&&!f)return b.statusCode=404,b.setHeader("x-nextjs-cache","REVALIDATED"),b.end("This page could not be found"),null;let e=await d(g);a.fetchMetrics=M.renderOpts.fetchMetrics;let i=M.renderOpts.pendingWaitUntil;i&&c.waitUntil&&(c.waitUntil(i),i=void 0);let j=M.renderOpts.collectedTags;if(!F)return await (0,o.I)(N,O,e,M.renderOpts.pendingWaitUntil),null;{let a=await e.blob(),b=(0,p.toNodeOutgoingHttpHeaders)(e.headers);j&&(b[r.NEXT_CACHE_TAGS_HEADER]=j),!b["content-type"]&&a.type&&(b["content-type"]=a.type);let c=void 0!==M.renderOpts.collectedRevalidate&&!(M.renderOpts.collectedRevalidate>=r.INFINITE_CACHE)&&M.renderOpts.collectedRevalidate,d=void 0===M.renderOpts.collectedExpire||M.renderOpts.collectedExpire>=r.INFINITE_CACHE?void 0:M.renderOpts.collectedExpire;return{value:{kind:t.CachedRouteKind.APP_ROUTE,status:e.status,body:Buffer.from(await a.arrayBuffer()),headers:b},cacheControl:{revalidate:c,expire:d}}}}catch(b){throw(null==f?void 0:f.isStale)&&await v.onRequestError(a,b,{routerKind:"App Router",routePath:e,routeType:"route",revalidateReason:(0,n.c)({isRevalidate:I,isOnDemandRevalidate:B})},A),b}},l=await v.handleResponse({req:a,nextConfig:x,cacheKey:G,routeKind:f.RouteKind.APP_ROUTE,isFallback:!1,prerenderManifest:z,isRoutePPREnabled:!1,isOnDemandRevalidate:B,revalidateOnlyGenerated:C,responseGenerator:k,waitUntil:c.waitUntil});if(!F)return null;if((null==l||null==(i=l.value)?void 0:i.kind)!==t.CachedRouteKind.APP_ROUTE)throw Object.defineProperty(Error(`Invariant: app-route received invalid cache entry ${null==l||null==(j=l.value)?void 0:j.kind}`),"__NEXT_ERROR_CODE",{value:"E701",enumerable:!1,configurable:!0});(0,h.getRequestMeta)(a,"minimalMode")||b.setHeader("x-nextjs-cache",B?"REVALIDATED":l.isMiss?"MISS":l.isStale?"STALE":"HIT"),y&&b.setHeader("Cache-Control","private, no-cache, no-store, max-age=0, must-revalidate");let m=(0,p.fromNodeOutgoingHttpHeaders)(l.value.headers);return(0,h.getRequestMeta)(a,"minimalMode")&&F||m.delete(r.NEXT_CACHE_TAGS_HEADER),!l.cacheControl||b.getHeader("Cache-Control")||m.get("Cache-Control")||m.set("Cache-Control",(0,q.getCacheControlHeader)(l.cacheControl)),await (0,o.I)(N,O,new Response(l.value.body,{headers:m,status:l.value.status||200})),null};L?await g(L):await K.withPropagatedContext(a.headers,()=>K.trace(m.BaseServerSpan.handleRequest,{spanName:`${J} ${a.url}`,kind:i.SpanKind.SERVER,attributes:{"http.method":J,"http.target":a.url}},g))}catch(b){if(b instanceof s.NoFallbackError||await v.onRequestError(a,b,{routerKind:"App Router",routePath:E,routeType:"route",revalidateReason:(0,n.c)({isRevalidate:I,isOnDemandRevalidate:B})}),F)throw b;return await (0,o.I)(N,O,new Response(null,{status:500})),null}}},6439:a=>{"use strict";a.exports=require("next/dist/shared/lib/no-fallback-error.external")},6487:()=>{},8335:()=>{},9294:a=>{"use strict";a.exports=require("next/dist/server/app-render/work-async-storage.external.js")}};var b=require("../../webpack-runtime.js");b.C(a);var c=b.X(0,[873],()=>b(b.s=6144));module.exports=c})();
