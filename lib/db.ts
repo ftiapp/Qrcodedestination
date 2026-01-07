@@ -61,3 +61,29 @@ export async function findShortUrlBySlug(slug: string) {
   )
   return rows[0] ?? null
 }
+
+type AnalyticsClickInsert = {
+  linkId: number
+  slug: string
+  occurredAt?: Date
+  userAgent: string | null
+  ipAddress: string | null
+  source: string | null
+}
+
+export async function logAnalyticsClick({
+  linkId,
+  slug,
+  occurredAt = new Date(),
+  userAgent,
+  ipAddress,
+  source,
+}: AnalyticsClickInsert) {
+  const pool = getPool()
+  await pool.execute(
+    `INSERT INTO analytics_clicks
+      (link_id, slug, occurred_at, user_agent, ip_address, source)
+     VALUES (?, ?, ?, ?, ?, ?)`,
+    [linkId, slug, occurredAt, userAgent, ipAddress, source]
+  )
+}

@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { findShortUrlBySlug } from '../../lib/db'
+import { findShortUrlBySlug, logAnalyticsClick } from '../../lib/db'
 
 function isAllowedMainSiteReferrer(value: string) {
   if (!value) return false
@@ -76,6 +76,22 @@ export async function GET(
   if (!destination) {
     return redirectTo('/404', request)
   }
+
+  const forwardedFor = request.headers.get('x-forwarded-for')
+  const clientIp =
+    (forwardedFor ? forwardedFor.split(',')[0]?.trim() : undefined) ??
+    request.headers.get('x-real-ip') ??
+    null
+
+  logAnalyticsClick({
+    linkId: shortUrl.id,
+    slug,
+    userAgent: request.headers.get('user-agent'),
+    ipAddress: clientIp,
+    source: isDirectAccess ? 'direct' : 'redirect',
+  }).catch((err) => {
+    console.error('Failed to log analytics click:', err)
+  })
 
   return NextResponse.redirect(destination)
 }
