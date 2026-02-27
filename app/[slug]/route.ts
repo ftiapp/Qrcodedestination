@@ -3,11 +3,17 @@ import { findShortUrlBySlug, logAnalyticsClick } from '../../lib/db'
 
 function isAllowedMainSiteReferrer(value: string) {
   if (!value) return false
+  const allowedPrefixes = [
+    'https://employee-management-9yicp.kinsta.app/',
+    'http://localhost:3000/',
+    'http://127.0.0.1:3000/',
+  ]
+
+  const allowedHosts = ['ftiservice.net', 'facebook.com', 'l.facebook.com', 'm.facebook.com']
+
   return (
-    value.startsWith('https://employee-management-9yicp.kinsta.app/') ||
-    value.startsWith('http://localhost:3000/') ||
-    value.startsWith('http://127.0.0.1:3000/') ||
-    value.includes('ftiservice.net')
+    allowedPrefixes.some((prefix) => value.startsWith(prefix)) ||
+    allowedHosts.some((host) => value.includes(host))
   )
 }
 
@@ -50,13 +56,17 @@ export async function GET(
   const { slug } = await params
 
   // Security Check: Referer/Origin
+  const allowAllReferrers = process.env.ALLOW_ALL_REFERRERS === 'true'
   const referer = request.headers.get('referer') || ''
   const origin = request.headers.get('origin') || ''
 
   // Allow direct access for testing if no referer/origin is present
   const isDirectAccess = !referer && !origin
   const isAuthorized =
-    isDirectAccess || isAllowedMainSiteReferrer(referer) || isAllowedMainSiteReferrer(origin)
+    allowAllReferrers ||
+    isDirectAccess ||
+    isAllowedMainSiteReferrer(referer) ||
+    isAllowedMainSiteReferrer(origin)
 
   if (!isAuthorized) {
     return redirectTo('/403', request)
